@@ -10,19 +10,19 @@ Live site: https://robbiepowelson-code.github.io/public-records-accessibility-pr
 
 ## What's here
 
-- `index.html` is the whole site in one file: hero, what we do, tip form, request tracker, documents, press, newsletter, donate and about.
+- `index.html` is the whole site in one file: intro, what we do, and about.
 - `docs/screenshots/` has screenshots of the live site.
 
 ## Status
 
-This is a draft. The tip form, tracker, documents, press list and newsletter sign-up were built to store data inside a Claude artifact. On a regular web host they show a "not open yet" message and save nothing. Before launch, connect them to real services:
+Early version. Only finished content is published. Planned additions, each to be added once it works:
 
 | Feature | Options |
 | --- | --- |
 | Tip form | Formspree, Basin, Netlify Forms, or a Google Form |
 | Newsletter | Buttondown, Substack, or Mailchimp embed |
 | Donations | Fiscal sponsor's donation page, Givebutter, Donorbox, or Patreon |
-| Tracker and documents | Edit the page directly, or link to MuckRock and DocumentCloud |
+| Request tracker, documents, press | Edit the page directly, linking to MuckRock and DocumentCloud |
 
 ## Publishing with GitHub Pages
 
