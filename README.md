@@ -4,9 +4,14 @@ Website for the Public Records Accessibility Project. The project files Californ
 
 Founders: Yesica Prado and Robbie Powelson.
 
+Live site: https://robbiepowelson-code.github.io/public-records-accessibility-project/
+
+![Home page](docs/screenshots/hero.jpg)
+
 ## What's here
 
-- `index.html` is the whole site in one file: hero, what we do, request tracker, tip form, documents, press, newsletter, donate and about.
+- `index.html` is the whole site in one file: hero, what we do, tip form, request tracker, documents, press, newsletter, donate and about.
+- `docs/screenshots/` has screenshots of the live site.
 
 ## Status
 
