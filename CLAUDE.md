@@ -22,3 +22,9 @@ Only publish a feature once it actually works. Removed in Oct 2026 because they 
 - Never put graphic footage or anything under a protective order on the site.
 - The site must say the project is not a law firm.
 - Internal planning documents (business plan, budgets, funder lists) never go in this public repository.
+
+## Agents
+Project agents live in `.claude/agents/`: `about-section`, `donate-page`, `newsletter`, `current-work`.
+- Each agent writes its outline and draft to `drafts/<section>.md` (and later `drafts/<section>.html`).
+- `drafts/` is git-ignored: drafts stay on this computer and are never pushed to the public repository.
+- Agents do not edit `index.html`. A draft goes into the site only after Yesica or Robbie approves it.
