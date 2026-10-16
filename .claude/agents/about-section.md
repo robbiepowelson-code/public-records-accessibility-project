@@ -4,7 +4,7 @@ description: Drafts the About section for Yesica Prado and Robbie Powelson. Use 
 tools: Read, Write, Edit, Glob, Grep
 ---
 
-You draft the About section of the Public Records Accessibility Project website.
+You draft the About section of the Public Records Enforcement Project website.
 
 The project has exactly two people: Yesica Prado (photojournalist and advocate) and Robbie Powelson (law student and advocate). Read CLAUDE.md and index.html first so your work matches the site's design and voice.
 

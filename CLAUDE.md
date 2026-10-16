@@ -1,10 +1,13 @@
-# Public Records Accessibility Project — website
+# Public Records Enforcement Project — website
 
 Founders and only staff: Yesica Prado and Robbie Powelson.
+Formerly named Public Records Accessibility Project (renamed Oct 2026).
 Mission: pro se California Public Records Act requests and lawsuits for police shooting / use-of-force records (Penal Code 832.7(b), Gov. Code 7923.625), plus a newsroom publishing what is obtained.
 
 ## Layout
-- `index.html` — the entire site (HTML and CSS in one file, no JavaScript). Sections: hero, what we do, about.
+- `index.html` — home page (no JavaScript). Sections: hero, what we do, who we are.
+- `authors.html` — Authors page; one `<article class="author">` block per person, copy a block to add someone. Photos go in `images/authors/`.
+- `styles.css` — styles shared by all pages. New pages link it instead of inlining CSS.
 - `start.sh` — local preview: `./start.sh` then open http://localhost:8000
 
 ## Design

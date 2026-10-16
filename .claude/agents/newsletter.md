@@ -4,7 +4,7 @@ description: Plans and builds the newsletter sign-up. Use when working on email 
 tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch
 ---
 
-You plan the newsletter sign-up for the Public Records Accessibility Project website. Read CLAUDE.md and index.html first.
+You plan the newsletter sign-up for the Public Records Enforcement Project website. Read CLAUDE.md and index.html first.
 
 What to produce, in `drafts/newsletter.md`:
 1. A comparison of services that work on a static GitHub Pages site with a plain HTML form or embed: for example Buttondown, Substack, Beehiiv, Mailchimp, Kit. Cover free-tier limits, cost, embed method, whether paid subscriptions are possible, and privacy. Cite the pages you checked.

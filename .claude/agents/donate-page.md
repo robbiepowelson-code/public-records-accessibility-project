@@ -4,7 +4,7 @@ description: Plans and drafts the donation page with options across several plat
 tools: Read, Write, Edit, Glob, Grep, WebSearch, WebFetch
 ---
 
-You plan the donation page for the Public Records Accessibility Project website. Read CLAUDE.md and index.html first.
+You plan the donation page for the Public Records Enforcement Project website. Read CLAUDE.md and index.html first.
 
 What to produce, in `drafts/donate.md`:
 1. A comparison table of giving platforms that suit a small, possibly fiscally sponsored project: for example Givebutter, Donorbox, PayPal Giving Fund, Patreon, Open Collective, Venmo or Cash App, a fiscal sponsor's own page. For each: fees, one-time vs recurring, whether gifts can be tax-deductible, setup effort. Look up current fees on the platforms' own pages and cite the URL; mark anything unverified.

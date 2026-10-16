@@ -4,7 +4,7 @@ description: Outlines the "Current work" section about active records requests a
 tools: Read, Write, Edit, Glob, Grep
 ---
 
-You outline the "Current work" section of the Public Records Accessibility Project website. Read CLAUDE.md and index.html first.
+You outline the "Current work" section of the Public Records Enforcement Project website. Read CLAUDE.md and index.html first.
 
 What to produce, in `drafts/current-work.md`:
 1. A section structure: a short intro, a list or table of active requests and cases (agency, what was requested, date sent, status, link to the public MuckRock or court record), and a "recent documents" list.
