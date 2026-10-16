@@ -72,3 +72,34 @@ footer .wrap{display:grid;gap:8px}
 @media (max-width:560px){.author{grid-template-columns:1fr;gap:14px}.author .photo{width:96px}}
 .page-head{padding-block:48px 8px;border-bottom:0}
 nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:5px}
+
+/* forms (tip line) */
+form{display:grid;gap:18px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.row > *{min-width:0}
+@media (max-width:560px){.row{grid-template-columns:1fr}}
+label{display:grid;gap:6px;font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+input[type=text],input[type=email],input[type=date],select,textarea{font:inherit;font-family:var(--sans);font-size:1rem;text-transform:none;letter-spacing:0;color:var(--fg);background:var(--field);border:1px solid var(--rule);padding:10px 12px;width:100%;border-radius:2px}
+textarea{min-height:160px;resize:vertical}
+.check{display:flex;gap:8px;align-items:flex-start;font-family:var(--sans);font-size:.95rem;text-transform:none;letter-spacing:0;color:var(--fg)}
+.check input{margin-top:5px;accent-color:var(--accent)}
+.notice{border-left:3px solid var(--accent);background:var(--field);padding:14px 16px;font-size:.95rem}
+.tight{margin:0;padding-left:18px;display:grid;gap:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);left:-9999px}
+button.btn{font:800 .95rem var(--sans)}
+
+/* headings used inside pages */
+.small-h2{font-size:1.15rem}
+.small-h2::before{width:28px;height:4px;margin-bottom:10px}
+.author-name{font-size:1.35rem}
+
+/* press releases */
+.release-head .lead-sub{font-size:1.15rem;color:var(--muted);max-width:60ch}
+.release{gap:22px}
+.release-body{display:grid;gap:14px;max-width:65ch}
+.release-body p{margin:0}
+.release-body blockquote{margin:0;padding-left:16px;border-left:3px solid var(--accent)}
+.bio{display:grid;gap:10px}
+.contact{font-size:.95rem}
+.doclist{margin:0;padding-left:18px;display:grid;gap:4px}
+.endmark{text-align:center;font-family:var(--mono);color:var(--muted)}

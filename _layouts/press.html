@@ -1,0 +1,35 @@
+---
+layout: default
+nav: press
+---
+{%- assign pc = site.data.settings.press_contact -%}
+  <section class="page-head">
+    <div class="wrap stack release-head">
+      <p class="label">For immediate release · {{ page.date | date: "%B %-d, %Y" }}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="lead-sub">{{ page.subtitle }}</p>{% endif %}
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack release">
+      {% if pc.email and pc.email != "" %}
+      <p class="contact"><span class="label">Media contact</span><br>{% if pc.name and pc.name != "" %}{{ pc.name }} · {% endif %}<a href="mailto:{{ pc.email }}">{{ pc.email }}</a>{% if pc.phone and pc.phone != "" %} · {{ pc.phone }}{% endif %}</p>
+      {% endif %}
+      <div class="release-body">
+        {% if page.dateline and page.dateline != "" %}<p class="dateline"><strong>{{ page.dateline | upcase }}</strong> —</p>{% endif %}
+        {{ content }}
+      </div>
+      {% if page.documents and page.documents.size > 0 %}
+      <div class="stack" style="gap:8px">
+        <h2 class="small-h2">Documents</h2>
+        <ul class="doclist">
+          {% for d in page.documents %}<li><a href="{{ d.url }}">{{ d.label }}</a></li>{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      <p class="endmark">###</p>
+      <p class="muted" style="font-size:.9rem">The Public Records Enforcement Project is run by Yesica Prado and Robbie Powelson. It requests California police use-of-force records, sues agencies that withhold them, and publishes what it obtains. It is not a law firm.</p>
+      <p><a href="{{ '/press/' | relative_url }}">All press releases</a></p>
+    </div>
+  </section>

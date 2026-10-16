@@ -1,0 +1,9 @@
+{%- comment -%} Works out which optional parts of the site are switched on. {%- endcomment -%}
+{%- assign tip = site.data.settings.tip_line -%}
+{%- assign tips_on = false -%}
+{%- if tip.form_action and tip.form_action != "" -%}{%- assign tips_on = true -%}{%- endif -%}
+{%- if tip.email and tip.email != "" -%}{%- assign tips_on = true -%}{%- endif -%}
+{%- if tip.signal and tip.signal != "" -%}{%- assign tips_on = true -%}{%- endif -%}
+{%- assign live_press = site.press | where_exp: "r", "r.published != false" -%}
+{%- assign press_on = false -%}
+{%- if live_press.size > 0 -%}{%- assign press_on = true -%}{%- endif -%}

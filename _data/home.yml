@@ -1,0 +1,18 @@
+# Home page text. Edit in the web editor (Pages CMS) or here.
+
+hero_label: California public records · Police use of force
+hero_title: Public records should be public.
+hero_highlight: We sue to get them out.
+hero_text: When police kill or seriously injure someone in California, the records and video are public by law. Agencies often stall or refuse anyway. We request those records, take agencies to court when they don't comply, and publish what we obtain.
+
+what_we_do:
+  - label: Request
+    text: We file California Public Records Act requests for shooting and use-of-force records, body camera video and 911 audio.
+  - label: Sue
+    text: When an agency misses its deadline or withholds records without a lawful reason, we file a petition in superior court in our own names.
+  - label: Publish
+    text: We post the filings and the records we obtain, with reporting and short videos explaining what they show.
+
+legal_basis: "Legal basis: Penal Code § 832.7(b) (SB 1421, SB 16); Gov. Code § 7923.625 (body camera video); Gov. Code § 7920.000 et seq. (California Public Records Act)."
+
+who_we_are: The project is run by Yesica Prado and Robbie Powelson. Each case is filed by one of us as an individual requester, and we publish what we file.

@@ -1,49 +1,45 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Public Records Enforcement Project</title>
-<meta name="description" content="The Public Records Enforcement Project requests and sues for California police use-of-force records and publishes what it obtains.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<header>
-  <div class="wrap">
-    <a class="name" href="./">Public Records Enforcement Project</a>
-    <nav aria-label="Main">
-      <a href="#work">What we do</a>
-      <a href="authors.html">Authors</a>
-    </nav>
-  </div>
-</header>
-
-<main id="top">
+---
+layout: default
+# The words on this page live in _data/home.yml (or Home page in the web editor).
+---
+{%- include flags.html -%}
+{%- assign h = site.data.home -%}
   <section class="hero">
     <div class="wrap stack">
-      <p class="label">California public records · Police use of force</p>
-      <h1>Public records should be public. <span>We sue to get them out.</span></h1>
-      <p class="lead">When police kill or seriously injure someone in California, the records and video are public by law. Agencies often stall or refuse anyway. We request those records, take agencies to court when they don't comply, and publish what we obtain.</p>
+      <p class="label">{{ h.hero_label }}</p>
+      <h1>{{ h.hero_title }} <span>{{ h.hero_highlight }}</span></h1>
+      <p class="lead">{{ h.hero_text }}</p>
       <div class="btns">
-        <a class="btn primary" href="#work">See what we do</a>
-        <a class="btn" href="authors.html">Who we are</a>
+        {% if tips_on %}<a class="btn primary" href="{{ '/tips/' | relative_url }}">Send us a tip</a>
+        <a class="btn" href="#work">See what we do</a>{% else %}<a class="btn primary" href="#work">See what we do</a>
+        <a class="btn" href="{{ '/authors/' | relative_url }}">Who we are</a>{% endif %}
       </div>
     </div>
   </section>
+
+  {% if press_on %}
+  <section id="latest">
+    <div class="wrap stack">
+      <h2>Latest</h2>
+      <ul class="list">
+        {% assign recent = live_press | sort: "date" | reverse %}
+        {% for r in recent limit: 3 %}
+        <li><span class="label">{{ r.date | date: "%b %-d, %Y" }}</span><p><a href="{{ r.url | relative_url }}">{{ r.title }}</a></p></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+  {% endif %}
 
   <section id="work">
     <div class="wrap stack">
       <h2>What we do</h2>
       <ul class="list">
-        <li><span class="label">Request</span><p>We file California Public Records Act requests for shooting and use-of-force records, body camera video and 911 audio.</p></li>
-        <li><span class="label">Sue</span><p>When an agency misses its deadline or withholds records without a lawful reason, we file a petition in superior court in our own names.</p></li>
-        <li><span class="label">Publish</span><p>We post the filings and the records we obtain, with reporting and short videos explaining what they show.</p></li>
+        {% for item in h.what_we_do %}
+        <li><span class="label">{{ item.label }}</span><p>{{ item.text }}</p></li>
+        {% endfor %}
       </ul>
-      <p class="muted" style="font-size:.9rem">Legal basis: Penal Code § 832.7(b) (SB 1421, SB 16); Gov. Code § 7923.625 (body camera video); Gov. Code § 7920.000 et seq. (California Public Records Act).</p>
+      <p class="muted" style="font-size:.9rem">{{ h.legal_basis }}</p>
     </div>
   </section>
 
@@ -51,19 +47,8 @@
     <div class="wrap stack" style="gap:22px">
       <div class="stack">
         <h2>Who we are</h2>
-        <p>The project is run by Yesica Prado and Robbie Powelson. Each case is filed by one of us as an individual requester, and we publish what we file.</p>
+        <p>{{ h.who_we_are }}</p>
       </div>
-      <div><a class="btn" href="authors.html">Meet the authors</a></div>
+      <div><a class="btn" href="{{ '/authors/' | relative_url }}">Meet the authors</a></div>
     </div>
   </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <p><strong style="color:var(--fg)">Public Records Enforcement Project</strong> · California</p>
-    <p>We are not a law firm and do not give legal advice. Lawsuits are filed by the founders as self-represented petitioners.</p>
-  </div>
-</footer>
-
-</body>
-</html>

@@ -1,0 +1,35 @@
+---
+layout: default
+title: Press
+nav: press
+permalink: /press/
+description: Press releases from the Public Records Enforcement Project.
+# Each release is a file in the _press folder (or Press releases in the web editor).
+---
+{%- include flags.html -%}
+  <section class="page-head">
+    <div class="wrap stack">
+      <h1>Press</h1>
+      <p class="muted">Press releases about our records requests and lawsuits.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap stack">
+      {% if press_on %}
+      <ul class="list">
+        {% assign releases = live_press | sort: "date" | reverse %}
+        {% for r in releases %}
+        <li><span class="label">{{ r.date | date: "%b %-d, %Y" }}</span>
+          <div class="stack" style="gap:4px"><a href="{{ r.url | relative_url }}"><strong>{{ r.title }}</strong></a>{% if r.subtitle %}<p class="muted">{{ r.subtitle }}</p>{% endif %}</div></li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="muted">No press releases yet.</p>
+      {% endif %}
+      {% assign pc = site.data.settings.press_contact %}
+      {% if pc.email and pc.email != "" %}
+      <p class="notice">Reporters: contact {% if pc.name and pc.name != "" %}{{ pc.name }} at {% endif %}<a href="mailto:{{ pc.email }}">{{ pc.email }}</a>{% if pc.phone and pc.phone != "" %} or {{ pc.phone }}{% endif %}.</p>
+      {% endif %}
+    </div>
+  </section>

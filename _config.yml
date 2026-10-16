@@ -1,0 +1,35 @@
+# Site-wide settings for Jekyll (GitHub Pages builds the site from this).
+# Everyday text lives in _data/ and in the _authors/ and _press/ folders, not here.
+
+title: Public Records Enforcement Project
+description: The Public Records Enforcement Project requests and sues for California police use-of-force records and publishes what it obtains.
+
+# The site's address. When a custom domain is connected:
+#   url: "https://yourdomain.org"
+#   baseurl: ""
+url: "https://robbiepowelson-code.github.io"
+baseurl: "/public-records-accessibility-project"
+
+collections:
+  authors:
+    output: false
+  press:
+    output: true
+    permalink: /press/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: press
+    values:
+      layout: press
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - start.sh
+  - docs
+  - drafts
+  - Gemfile
+  - Gemfile.lock
+  - vendor

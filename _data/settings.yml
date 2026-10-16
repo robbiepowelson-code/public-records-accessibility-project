@@ -1,0 +1,20 @@
+# Site settings you can change in the web editor (Pages CMS) or here.
+# Leave a value as "" to turn that thing off.
+
+# Tip line. The "Send a tip" page and menu link appear as soon as ANY of these is filled in.
+tip_line:
+  # Web form service address, e.g. https://formspree.io/f/abcdwxyz
+  form_action: ""
+  # Email address for tips, e.g. tips@yourdomain.org (a Proton Mail address is best for sensitive tips)
+  email: ""
+  # Signal phone number or username link, e.g. https://signal.me/#eu/...
+  signal: ""
+
+# Media contact printed on every press release.
+press_contact:
+  name: ""
+  email: ""
+  phone: ""
+
+# General contact email shown in the footer (leave "" to hide).
+contact_email: ""

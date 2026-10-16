@@ -8,21 +8,37 @@ Live site: https://robbiepowelson-code.github.io/public-records-accessibility-pr
 
 ![Home page](docs/screenshots/hero.jpg)
 
-## What's here
+## Editing the site (no code needed)
 
-- `index.html` is the home page: intro, what we do, and who we are.
-- `authors.html` is the Authors page. To add someone, copy one `<article class="author">` block (instructions are in a comment at the top of the list).
-- `styles.css` holds the styles shared by every page.
-- `images/authors/` is where author photos go.
-- `docs/screenshots/` has screenshots of the live site.
+1. Go to https://app.pagescms.org and sign in with GitHub.
+2. Install the Pages CMS app on this repository when asked, then open the repository.
+3. Edit any of these in plain forms, then click **Save**. The live site updates about a minute later.
+   - **Press releases**: add a new release; untick *Published* to keep it off the site.
+   - **Authors**: add a person, upload a photo, write a bio.
+   - **Home page**: headline, intro and "What we do" text.
+   - **Site settings**: tip line, media contact, contact email.
+
+## How the files are organized
+
+| File or folder | What it is |
+| --- | --- |
+| `_data/home.yml` | Home page text |
+| `_data/settings.yml` | Tip line, media contact, contact email. A page only appears once its setting is filled in. |
+| `_authors/` | One file per author |
+| `_press/` | One file per press release (the Press menu link appears once there is one) |
+| `images/` | Photos and images |
+| `index.html`, `authors.html`, `press.html`, `tips.html` | Page templates |
+| `_layouts/`, `_includes/` | Shared header, footer and press release layout |
+| `styles.css` | Styles for every page |
+| `_config.yml` | Site name and address. Change `url` and `baseurl` when a custom domain is connected. |
+| `.pages.yml` | Setup for the web editor |
 
 ## Status
 
-Early version. Only finished content is published. Planned additions, each to be added once it works:
+Early version. Only finished content is published. Built and waiting for settings: tip line (fill in Site settings), press releases (add the first one). Planned additions, each to be added once it works:
 
 | Feature | Options |
 | --- | --- |
-| Tip form | Formspree, Basin, Netlify Forms, or a Google Form |
 | Newsletter | Buttondown, Substack, or Mailchimp embed |
 | Donations | Fiscal sponsor's donation page, Givebutter, Donorbox, or Patreon |
 | Request tracker, documents, press | Edit the page directly, linking to MuckRock and DocumentCloud |
@@ -31,10 +47,6 @@ Early version. Only finished content is published. Planned additions, each to be
 
 Settings > Pages > Deploy from a branch > `main` / root. The site will appear at `https://<username>.github.io/public-records-accessibility-project/`.
 
-## Run it locally
+## Preview on your computer (optional)
 
-```
-./start.sh
-```
-
-Then open http://localhost:8000 (it opens automatically on a Mac).
+The site is built by Jekyll, the same tool GitHub Pages uses. Run `./start.sh`; the first time it prints the one-time setup steps. The web editor does not need this.

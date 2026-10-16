@@ -1,0 +1,163 @@
+# Web editor (Pages CMS) setup. Sign in at https://app.pagescms.org with GitHub
+# and open this repository to edit the site in a browser.
+
+media:
+  input: images
+  output: /images
+
+content:
+  - name: press
+    label: Press releases
+    type: collection
+    path: _press
+    format: yaml-frontmatter
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      primary: title
+      fields: [title, date, published]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Headline
+        type: string
+        required: true
+      - name: subtitle
+        label: Subheadline (one sentence)
+        type: string
+      - name: date
+        label: Release date
+        type: date
+        required: true
+      - name: dateline
+        label: Dateline (city), e.g. Berkeley, Calif.
+        type: string
+      - name: published
+        label: Published (untick to hide from the site)
+        type: boolean
+        default: true
+      - name: documents
+        label: Documents (court filings, records)
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Link text
+            type: string
+          - name: url
+            label: Link address
+            type: string
+      - name: body
+        label: Release text
+        type: rich-text
+
+  - name: authors
+    label: Authors
+    type: collection
+    path: _authors
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: name
+      fields: [name, role, order]
+      sort: order
+    fields:
+      - name: name
+        label: Full name
+        type: string
+        required: true
+      - name: role
+        label: Role (shown under the name)
+        type: string
+      - name: order
+        label: Position on the page (1 = first)
+        type: number
+      - name: photo
+        label: Photo (square works best)
+        type: image
+      - name: links
+        label: Links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Link text, e.g. Portfolio
+            type: string
+          - name: url
+            label: Link address
+            type: string
+      - name: body
+        label: Bio
+        type: rich-text
+
+  - name: home
+    label: Home page
+    type: file
+    path: _data/home.yml
+    format: yaml
+    fields:
+      - name: hero_label
+        label: Small line above the headline
+        type: string
+      - name: hero_title
+        label: Headline
+        type: string
+      - name: hero_highlight
+        label: Highlighted part of the headline (yellow)
+        type: string
+      - name: hero_text
+        label: Intro paragraph
+        type: text
+      - name: what_we_do
+        label: What we do
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: text
+            label: Description
+            type: text
+      - name: legal_basis
+        label: Legal basis line
+        type: text
+      - name: who_we_are
+        label: Who we are
+        type: text
+
+  - name: settings
+    label: Site settings
+    type: file
+    path: _data/settings.yml
+    format: yaml
+    fields:
+      - name: tip_line
+        label: Tip line (the Send a tip page appears once any of these is filled in)
+        type: object
+        fields:
+          - name: form_action
+            label: Tip form address (from Formspree or similar)
+            type: string
+          - name: email
+            label: Tip email address
+            type: string
+          - name: signal
+            label: Signal number or link
+            type: string
+      - name: press_contact
+        label: Media contact (printed on press releases)
+        type: object
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: email
+            label: Email
+            type: string
+          - name: phone
+            label: Phone
+            type: string
+      - name: contact_email
+        label: General contact email (footer)
+        type: string
