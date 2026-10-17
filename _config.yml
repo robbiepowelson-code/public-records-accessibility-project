@@ -17,6 +17,9 @@ author: Public Records Enforcement Project
 lang: en_US
 social:
   name: Public Records Enforcement Project
+# Large image previews when links are shared (Messages, Slack, X, Facebook, LinkedIn).
+twitter:
+  card: summary_large_image
 
 collections:
   authors:
@@ -26,6 +29,11 @@ collections:
     permalink: /press/:name/
 
 defaults:
+  - scope:
+      path: ""
+    values:
+      # Link preview image for every page (1200x630). A page or press release can override it with its own "image:".
+      image: /images/social-card.png
   - scope:
       path: ""
       type: press

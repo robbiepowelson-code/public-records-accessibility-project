@@ -11,6 +11,7 @@ The site is a Jekyll site built by GitHub Pages (no build step to run; pushing t
 - `styles.css` — styles shared by all pages. Use `relative_url` for every internal link and asset.
 - `_config.yml` — `url: https://gettherecords.org`, `baseurl: ""`. `CNAME` holds the custom domain; never delete it.
 - Domain GetTheRecords.org (write it with capitals in copy) is registered at Porkbun; DNS = ALIAS apex + CNAME www to robbiepowelson-code.github.io, verified on GitHub.
+- `images/social-card.png` — 1200×630 link preview image used on every page (set in `_config.yml` defaults). Its design source is `docs/social-card-source.html`; re-render at 1200×630 if the name or domain changes.
 - `.pages.yml` — web editor (Pages CMS, app.pagescms.org). Keep its fields in sync with the front matter and data files.
 - `start.sh` — local Jekyll preview (needs Ruby; optional).
 - Optional pages switch on by content: the Press link appears once a published release exists; the tip page and link appear once any tip setting is filled in.
