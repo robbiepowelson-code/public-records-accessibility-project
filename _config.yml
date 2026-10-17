@@ -8,6 +8,16 @@ description: The Public Records Enforcement Project requests and sues for Califo
 url: "https://gettherecords.org"
 baseurl: ""
 
+# Search engines: sitemap.xml and search/social preview tags (both built in to GitHub Pages).
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+author: Public Records Enforcement Project
+lang: en_US
+social:
+  name: Public Records Enforcement Project
+
 collections:
   authors:
     output: false
