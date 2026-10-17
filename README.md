@@ -4,7 +4,7 @@ Website for the Public Records Enforcement Project. The project files California
 
 Founders: Yesica Prado and Robbie Powelson.
 
-Live site: https://robbiepowelson-code.github.io/public-records-accessibility-project/
+Live site: https://gettherecords.org (GetTheRecords.org)
 
 ![Home page](docs/screenshots/hero.jpg)
 
@@ -30,7 +30,8 @@ Live site: https://robbiepowelson-code.github.io/public-records-accessibility-pr
 | `index.html`, `authors.html`, `press.html`, `tips.html` | Page templates |
 | `_layouts/`, `_includes/` | Shared header, footer and press release layout |
 | `styles.css` | Styles for every page |
-| `_config.yml` | Site name and address. Change `url` and `baseurl` when a custom domain is connected. |
+| `_config.yml` | Site name and address (`https://gettherecords.org`) |
+| `CNAME` | Tells GitHub Pages to serve the site at gettherecords.org. Don't delete it. |
 | `.pages.yml` | Setup for the web editor |
 
 ## Status
@@ -45,7 +46,9 @@ Early version. Only finished content is published. Built and waiting for setting
 
 ## Publishing with GitHub Pages
 
-Settings > Pages > Deploy from a branch > `main` / root. The site will appear at `https://<username>.github.io/public-records-accessibility-project/`.
+Settings > Pages > Deploy from a branch > `main` / root, custom domain `gettherecords.org`.
+
+Domain: registered at Porkbun (auto-renew on). DNS: ALIAS `gettherecords.org` and CNAME `www` → `robbiepowelson-code.github.io`, plus GitHub's verification TXT record. Never add a wildcard (`*`) record.
 
 ## Preview on your computer (optional)
 

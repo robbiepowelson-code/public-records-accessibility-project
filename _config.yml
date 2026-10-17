@@ -4,11 +4,9 @@
 title: Public Records Enforcement Project
 description: The Public Records Enforcement Project requests and sues for California police use-of-force records and publishes what it obtains.
 
-# The site's address. When a custom domain is connected:
-#   url: "https://yourdomain.org"
-#   baseurl: ""
-url: "https://robbiepowelson-code.github.io"
-baseurl: "/public-records-accessibility-project"
+# The site's address (custom domain, connected Oct 2026; the CNAME file must stay).
+url: "https://gettherecords.org"
+baseurl: ""
 
 collections:
   authors:

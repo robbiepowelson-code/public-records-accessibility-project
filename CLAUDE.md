@@ -9,7 +9,8 @@ The site is a Jekyll site built by GitHub Pages (no build step to run; pushing t
 - Content people edit: `_data/home.yml` (home text), `_data/settings.yml` (tip line, press contact, contact email), `_authors/*.md` (one per author), `_press/*.md` (one per press release).
 - Templates: `index.html`, `authors.html` (/authors/), `press.html` (/press/), `tips.html` (/tips/), `_layouts/default.html`, `_layouts/press.html`, `_includes/flags.html` (decides which optional pages are on).
 - `styles.css` — styles shared by all pages. Use `relative_url` for every internal link and asset.
-- `_config.yml` — when a custom domain is connected, set `url` to it and `baseurl: ""`.
+- `_config.yml` — `url: https://gettherecords.org`, `baseurl: ""`. `CNAME` holds the custom domain; never delete it.
+- Domain GetTheRecords.org (write it with capitals in copy) is registered at Porkbun; DNS = ALIAS apex + CNAME www to robbiepowelson-code.github.io, verified on GitHub.
 - `.pages.yml` — web editor (Pages CMS, app.pagescms.org). Keep its fields in sync with the front matter and data files.
 - `start.sh` — local Jekyll preview (needs Ruby; optional).
 - Optional pages switch on by content: the Press link appears once a published release exists; the tip page and link appear once any tip setting is filled in.

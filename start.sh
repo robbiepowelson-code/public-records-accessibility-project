@@ -13,5 +13,5 @@ if ! command -v bundle >/dev/null 2>&1; then
   exit 1
 fi
 [ -f Gemfile.lock ] || bundle install
-( sleep 4; open "http://localhost:4000/public-records-accessibility-project/" 2>/dev/null || true ) &
+( sleep 4; open "http://localhost:4000/" 2>/dev/null || true ) &
 bundle exec jekyll serve --livereload
