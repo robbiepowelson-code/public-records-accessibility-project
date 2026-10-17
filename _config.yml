@@ -13,13 +13,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
 
-author: Public Records Enforcement Project
 lang: en_US
-social:
-  name: Public Records Enforcement Project
-# Large image previews when links are shared (Messages, Slack, X, Facebook, LinkedIn).
-twitter:
-  card: summary_large_image
+# Link previews use a large image automatically because every page has an "image:" (see defaults below).
+# Add "twitter: {username: yourhandle}" here once the project has an X account.
 
 collections:
   authors:
