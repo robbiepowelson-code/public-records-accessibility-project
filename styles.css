@@ -97,6 +97,10 @@ nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:var(-
 
 /* forms (tip line) */
 form{display:grid;gap:18px}
+.newsletter-signup{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:12px;max-width:540px}
+.newsletter-signup label{font-family:var(--sans);font-size:.95rem;letter-spacing:0;text-transform:none;color:var(--fg)}
+.newsletter-signup input[type=email]{min-height:46px}
+@media (max-width:560px){.newsletter-signup{grid-template-columns:1fr}}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .row > *{min-width:0}
 @media (max-width:560px){.row{grid-template-columns:1fr}}

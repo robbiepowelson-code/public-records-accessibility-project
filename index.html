@@ -64,6 +64,22 @@ layout: default
     </div>
   </section>
 
+  {% if newsletter_on %}
+  <section id="newsletter">
+    <div class="wrap stack">
+      <h2>Newsletter</h2>
+      <p>Get occasional email updates about our public records work and reporting.</p>
+      <form class="newsletter-signup" action="{{ newsletter_action | escape }}" method="post">
+        <label for="newsletter-email">Email address
+          <input id="newsletter-email" type="email" name="email" required autocomplete="email" placeholder="you@example.com">
+        </label>
+        <div><button class="btn primary" type="submit">Sign up</button></div>
+      </form>
+      <p class="muted">Unsubscribe at any time.</p>
+    </div>
+  </section>
+  {% endif %}
+
   <section id="about">
     <div class="wrap stack">
         <h2>Who we are</h2>

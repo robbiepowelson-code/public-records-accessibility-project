@@ -21,6 +21,7 @@
     <nav aria-label="Main">
       <a href="{{ '/' | relative_url }}#work">What we do</a>
       {% if press_on or coverage_on %}<a href="{{ '/' | relative_url }}#news">News</a>{% endif %}
+      {% if newsletter_on %}<a href="{{ '/' | relative_url }}#newsletter">Newsletter</a>{% endif %}
       <a href="{{ '/' | relative_url }}#about">About</a>
       <a href="{{ '/' | relative_url }}#authors">Authors</a>
       <a href="{{ '/' | relative_url }}#ethics">Ethics</a>
@@ -41,6 +42,7 @@
       <a href="{{ '/' | relative_url }}#authors">Authors</a>
       <a href="{{ '/' | relative_url }}#ethics">Ethics</a>
       <a href="{{ '/' | relative_url }}#get-involved">Get Involved</a>
+      {% if newsletter_on %}<a href="{{ '/' | relative_url }}#newsletter">Newsletter</a>{% endif %}
       {% if press_on or coverage_on %}<a href="{{ '/' | relative_url }}#news">News</a>{% endif %}
       {% if tips_on %}<a href="{{ '/' | relative_url }}#tips">Send a tip</a>{% endif %}
       {% if donation_on %}<a href="{{ site.data.settings.donation_url | escape }}">Donate</a>{% endif %}

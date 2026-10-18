@@ -19,4 +19,6 @@ press_contact:
 # General contact email shown in the footer (leave "" to hide).
 contact_email: "info@gettherecords.org"
 
+newsletter_form_action: "https://buttondown.com/api/emails/embed-subscribe/PREP"
+
 donation_url: ""
