@@ -197,9 +197,6 @@ content:
       - name: contact_email
         label: General contact email (footer)
         type: string
-      - name: newsletter_form_url
-        label: Google Forms iframe src URL, including embedded=true (leave empty to hide)
-        type: string
       - name: donation_url
         label: Donation destination (HTTPS URL; leave empty to hide financial contributions)
         type: string
