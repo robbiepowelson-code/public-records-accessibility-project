@@ -19,4 +19,7 @@ press_contact:
 # General contact email shown in the footer (leave "" to hide).
 contact_email: "info@gettherecords.org"
 
+# Google Forms iframe src URL (with embedded=true). Leave blank to hide the signup.
+newsletter_form_url: "https://docs.google.com/forms/d/e/1FAIpQLScjHiekRtFj61BPV7wBX6q7RXDzu3NSxftJ27i8hynGsdht0Q/viewform?embedded=true"
+
 donation_url: ""

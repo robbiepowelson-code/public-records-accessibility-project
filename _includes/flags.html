@@ -10,6 +10,11 @@
 {%- assign donation_on = false -%}
 {%- assign donation_scheme = site.data.settings.donation_url | slice: 0, 8 -%}
 {%- if donation_scheme == 'https://' -%}{%- assign donation_on = true -%}{%- endif -%}
+{%- assign newsletter_on = false -%}
+{%- assign newsletter_url = site.data.settings.newsletter_form_url -%}
+{%- if newsletter_url contains 'https://docs.google.com/forms/' and newsletter_url contains 'embedded=true' -%}
+	{%- assign newsletter_on = true -%}
+{%- endif -%}
 {%- assign coverage_on = false -%}
 {%- for story in site.data.coverage.stories -%}
 	{%- if story.published == true and story.title != blank and story.outlet != blank and story.url != blank and story.image != blank and story.image_alt != blank -%}
