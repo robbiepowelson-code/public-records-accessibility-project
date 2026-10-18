@@ -1,0 +1,12 @@
+{%- include flags.html -%}
+<nav class="section-nav" aria-label="{% if page.section == 'involved' %}Get Involved{% else %}About{% endif %}">
+  {% if page.section == 'involved' %}
+  <a href="{{ '/get-involved/' | relative_url }}"{% if page.nav == 'contact' %} aria-current="page"{% endif %}>Get in Touch</a>
+  {% if tips_on %}<a href="{{ '/tips/' | relative_url }}"{% if page.nav == 'tips' %} aria-current="page"{% endif %}>Send a tip</a>{% endif %}
+  {% if donation_on %}<a href="{{ '/get-involved/contribute/' | relative_url }}"{% if page.nav == 'contribute' %} aria-current="page"{% endif %}>Financial Contributions</a>{% endif %}
+  {% else %}
+  <a href="{{ '/about/' | relative_url }}"{% if page.nav == 'about' %} aria-current="page"{% endif %}>About the project</a>
+  <a href="{{ '/authors/' | relative_url }}"{% if page.nav == 'authors' %} aria-current="page"{% endif %}>Authors</a>
+  {% if coverage_on %}<a href="{{ '/about/in-the-news/' | relative_url }}"{% if page.nav == 'coverage' %} aria-current="page"{% endif %}>In the News</a>{% endif %}
+  {% endif %}
+</nav>

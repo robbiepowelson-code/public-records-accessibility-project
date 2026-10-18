@@ -126,6 +126,45 @@ content:
         label: Who we are
         type: text
 
+  - name: coverage
+    label: In the News
+    type: file
+    path: _data/coverage.yml
+    format: yaml
+    fields:
+      - name: stories
+        label: News stories about the project
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Headline
+            type: string
+            required: true
+          - name: outlet
+            label: News outlet
+            type: string
+            required: true
+          - name: url
+            label: Original story URL
+            type: string
+            required: true
+          - name: image
+            label: Thumbnail (use an image you have permission to publish)
+            type: image
+            required: true
+          - name: image_alt
+            label: Image description
+            type: string
+            required: true
+          - name: image_credit
+            label: Photo credit
+            type: string
+          - name: published
+            label: Published
+            type: boolean
+            default: false
+
   - name: settings
     label: Site settings
     type: file
@@ -160,4 +199,7 @@ content:
             type: string
       - name: contact_email
         label: General contact email (footer)
+        type: string
+      - name: donation_url
+        label: Donation destination (HTTPS URL; leave empty to hide financial contributions)
         type: string

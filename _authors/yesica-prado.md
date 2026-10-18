@@ -1,8 +1,8 @@
 ---
 name: Yesica Prado
-role: Co-founder · Reporting, photography and video
+role: Co-founder
 order: 1
-photo: ""
+photo: /images/yesica-prado.png
 links: []
 ---
 Yesica is a photojournalist and advocate. She leads the project's field reporting, photography and video.

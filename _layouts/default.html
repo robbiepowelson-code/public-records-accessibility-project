@@ -13,14 +13,31 @@
 </head>
 <body>
 
+<a class="skip-link" href="#top">Skip to content</a>
+
 <header>
   <div class="wrap">
     <a class="name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
     <nav aria-label="Main">
       <a href="{{ '/' | relative_url }}#work">What we do</a>
       {% if press_on %}<a href="{{ '/press/' | relative_url }}"{% if page.nav == 'press' %} aria-current="page"{% endif %}>Press</a>{% endif %}
-      <a href="{{ '/authors/' | relative_url }}"{% if page.nav == 'authors' %} aria-current="page"{% endif %}>Authors</a>
-      {% if tips_on %}<a href="{{ '/tips/' | relative_url }}"{% if page.nav == 'tips' %} aria-current="page"{% endif %}>Send a tip</a>{% endif %}
+      <details class="nav-group">
+        <summary{% if page.section == 'about' or page.nav == 'authors' %} aria-current="true"{% endif %}>About</summary>
+        <div class="nav-menu">
+          <a href="{{ '/about/' | relative_url }}"{% if page.nav == 'about' %} aria-current="page"{% endif %}>About the project</a>
+          <a href="{{ '/authors/' | relative_url }}"{% if page.nav == 'authors' %} aria-current="page"{% endif %}>Authors</a>
+          {% if coverage_on %}<a href="{{ '/about/in-the-news/' | relative_url }}"{% if page.nav == 'coverage' %} aria-current="page"{% endif %}>In the News</a>{% endif %}
+        </div>
+      </details>
+      <details class="nav-group">
+        <summary{% if page.section == 'involved' or page.nav == 'tips' %} aria-current="true"{% endif %}>Get Involved</summary>
+        <div class="nav-menu">
+          <a href="{{ '/get-involved/' | relative_url }}"{% if page.nav == 'contact' %} aria-current="page"{% endif %}>Get in Touch</a>
+          {% if tips_on %}<a href="{{ '/tips/' | relative_url }}"{% if page.nav == 'tips' %} aria-current="page"{% endif %}>Send a tip</a>{% endif %}
+          {% if donation_on %}<a href="{{ '/get-involved/contribute/' | relative_url }}"{% if page.nav == 'contribute' %} aria-current="page"{% endif %}>Financial Contributions</a>{% endif %}
+        </div>
+      </details>
+      {% if donation_on %}<a class="nav-donate" href="{{ site.data.settings.donation_url | escape }}">Donate</a>{% endif %}
     </nav>
   </div>
 </header>
@@ -31,6 +48,13 @@
 
 <footer>
   <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/authors/' | relative_url }}">Authors</a>
+      <a href="{{ '/get-involved/' | relative_url }}">Get in Touch</a>
+      {% if coverage_on %}<a href="{{ '/about/in-the-news/' | relative_url }}">In the News</a>{% endif %}
+      {% if donation_on %}<a href="{{ '/get-involved/contribute/' | relative_url }}">Financial Contributions</a>{% endif %}
+    </nav>
     <p><strong style="color:var(--fg)">{{ site.title }}</strong> · California{% if site.data.settings.contact_email and site.data.settings.contact_email != "" %} · <a href="mailto:{{ site.data.settings.contact_email }}">{{ site.data.settings.contact_email }}</a>{% endif %}</p>
     <p>We are not a law firm and do not give legal advice. Lawsuits are filed by the founders as self-represented petitioners.</p>
   </div>

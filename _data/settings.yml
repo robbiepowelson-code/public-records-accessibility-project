@@ -18,3 +18,5 @@ press_contact:
 
 # General contact email shown in the footer (leave "" to hide).
 contact_email: ""
+
+donation_url: ""

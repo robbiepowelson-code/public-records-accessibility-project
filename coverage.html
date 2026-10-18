@@ -1,0 +1,48 @@
+---
+layout: default
+title: In the News
+nav: coverage
+section: about
+permalink: /about/in-the-news/
+---
+{%- include flags.html -%}
+<section class="page-head">
+  <div class="wrap stack">
+    <p class="label">About</p>
+    <h1>In the News</h1>
+    {% include section-nav.html %}
+  </div>
+</section>
+<section>
+  <div class="wrap stack">
+    {% if coverage_on %}
+    <div class="coverage-list">
+      {% for story in site.data.coverage.stories %}
+      {% if story.published == true and story.title != blank and story.outlet != blank and story.url != blank and story.image != blank and story.image_alt != blank %}
+      <article class="coverage-story">
+        <a class="coverage-image" href="{{ story.url | escape }}" aria-label="{{ story.title | escape }}">
+          <img src="{{ story.image | relative_url }}" alt="{{ story.image_alt | escape }}" loading="lazy" width="480" height="320">
+        </a>
+        <div class="stack">
+          <p class="label">{{ story.outlet | escape }}</p>
+          <h2 class="coverage-title"><a href="{{ story.url | escape }}">{{ story.title | escape }}</a></h2>
+          {% if story.image_credit and story.image_credit != "" %}<p class="muted photo-credit">Photo: {{ story.image_credit | escape }}</p>{% endif %}
+        </div>
+      </article>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="muted">No news coverage has been listed yet.</p>
+    {% endif %}
+  </div>
+</section>
+{% if donation_on %}
+<section class="support-band">
+  <div class="wrap stack">
+    <h2>Support public access to records</h2>
+    <p>Contribute to the Public Records Enforcement Project.</p>
+    <div><a class="btn primary" href="{{ site.data.settings.donation_url | escape }}">Donate</a></div>
+  </div>
+</section>
+{% endif %}

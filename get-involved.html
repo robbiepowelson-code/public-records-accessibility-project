@@ -1,0 +1,34 @@
+---
+layout: default
+title: Get in Touch
+nav: contact
+section: involved
+permalink: /get-involved/
+---
+{%- include flags.html -%}
+<section class="page-head">
+  <div class="wrap stack">
+    <p class="label">Get Involved</p>
+    <h1>Get in Touch</h1>
+    {% include section-nav.html %}
+  </div>
+</section>
+<section>
+  <div class="wrap stack">
+    <h2>Contact the project</h2>
+    {% if site.data.settings.contact_email and site.data.settings.contact_email != "" %}
+    <p><a href="mailto:{{ site.data.settings.contact_email | escape }}">{{ site.data.settings.contact_email | escape }}</a></p>
+    {% else %}
+    <p>General contact details have not yet been published.</p>
+    {% endif %}
+    {% if site.data.settings.press_contact.email and site.data.settings.press_contact.email != "" %}
+    <h2 class="small-h2">Media inquiries</h2>
+    <p><a href="mailto:{{ site.data.settings.press_contact.email | escape }}">{{ site.data.settings.press_contact.email | escape }}</a></p>
+    {% endif %}
+    {% if tips_on %}
+    <h2 class="small-h2">Share information</h2>
+    <p><a href="{{ '/tips/' | relative_url }}">Send the project a tip</a></p>
+    {% endif %}
+    <p>We are not a law firm and do not provide legal advice or representation.</p>
+  </div>
+</section>

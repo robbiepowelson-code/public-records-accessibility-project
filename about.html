@@ -1,0 +1,35 @@
+---
+layout: default
+title: About the Project
+nav: about
+section: about
+permalink: /about/
+---
+<section class="page-head">
+  <div class="wrap stack">
+    <p class="label">About</p>
+    <h1>Public Records Enforcement Project</h1>
+    {% include section-nav.html %}
+  </div>
+</section>
+<section>
+  <div class="wrap stack">
+    <h2>Why we do this</h2>
+    <p>{{ site.data.home.hero_text }}</p>
+    <h2>Who we are</h2>
+    <p>{{ site.data.home.who_we_are }}</p>
+    <p><a href="{{ '/authors/' | relative_url }}">Meet Yesica Prado and Robbie Powelson</a></p>
+  </div>
+</section>
+<section>
+  <div class="wrap stack">
+    <h2>Our work</h2>
+    <ul class="list">
+      {% for item in site.data.home.what_we_do %}
+      <li><span class="label">{{ item.label }}</span><p>{{ item.text }}</p></li>
+      {% endfor %}
+    </ul>
+    <p class="muted">{{ site.data.home.legal_basis }}</p>
+    {% if coverage_on %}<p><a href="{{ '/about/in-the-news/' | relative_url }}">Read news coverage of the project</a></p>{% endif %}
+  </div>
+</section>

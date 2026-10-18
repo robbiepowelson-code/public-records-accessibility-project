@@ -1,0 +1,26 @@
+---
+layout: default
+title: Financial Contributions
+nav: contribute
+section: involved
+permalink: /get-involved/contribute/
+---
+{%- include flags.html -%}
+<section class="page-head">
+  <div class="wrap stack">
+    <p class="label">Get Involved</p>
+    <h1>Financial Contributions</h1>
+    {% include section-nav.html %}
+  </div>
+</section>
+<section>
+  <div class="wrap stack">
+    {% if donation_on %}
+    <h2>Support the project</h2>
+    <p>Contribute to the Public Records Enforcement Project.</p>
+    <div><a class="btn primary" href="{{ site.data.settings.donation_url | escape }}">Donate</a></div>
+    {% else %}
+    <p>Online contributions are not currently available.</p>
+    {% endif %}
+  </div>
+</section>
