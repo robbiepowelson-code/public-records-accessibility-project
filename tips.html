@@ -7,9 +7,6 @@ description: Tell the Public Records Enforcement Project about a California poli
 # The tip line turns on from _data/settings.yml (or Site settings in the web editor).
 ---
 {%- include flags.html -%}
-{%- assign has_signal = false -%}{%- if tip.signal and tip.signal != "" -%}{%- assign has_signal = true -%}{%- endif -%}
-{%- assign has_email = false -%}{%- if tip.email and tip.email != "" -%}{%- assign has_email = true -%}{%- endif -%}
-{%- assign has_form = false -%}{%- if tip.form_action and tip.form_action != "" -%}{%- assign has_form = true -%}{%- endif -%}
   <section class="page-head">
     <div class="wrap stack">
       <h1>Send a tip</h1>
@@ -19,54 +16,6 @@ description: Tell the Public Records Enforcement Project about a California poli
 
   <section>
     <div class="wrap stack" style="gap:24px">
-    {% if tips_on %}
-      <div class="notice stack" style="gap:8px">
-        <p><strong>Before you send anything</strong></p>
-        <ul class="tight">
-          <li>Don't use a work phone, work computer or work email.</li>
-          <li>You can stay anonymous. If you leave no contact information, we can't follow up with you.</li>
-          {% if has_signal %}<li>For anything sensitive, Signal is the most private way to reach us.</li>{% endif %}
-          <li>Share only what you're comfortable sharing.</li>
-          <li>We are not a law firm and cannot represent you. Sending a tip does not create an attorney-client relationship. If you have a deadline to file a claim or lawsuit, contact a lawyer now.</li>
-        </ul>
-      </div>
-
-      {% if has_signal or has_email %}
-      <div class="stack" style="gap:10px">
-        <h2 class="small-h2">Contact us directly</h2>
-        <ul class="list">
-          {% if has_signal %}<li><span class="label">Signal</span><p>{% if tip.signal contains "http" %}<a href="{{ tip.signal }}">Message us on Signal</a>{% else %}{{ tip.signal }}{% endif %}</p></li>{% endif %}
-          {% if has_email %}<li><span class="label">Email</span><p><a href="mailto:{{ tip.email }}">{{ tip.email }}</a></p></li>{% endif %}
-        </ul>
-      </div>
-      {% endif %}
-
-      {% if has_form %}
-      <form class="tipform" action="{{ tip.form_action }}" method="POST">
-        <h2 class="small-h2">{% if has_signal or has_email %}Or use this form{% else %}Tip form{% endif %}</h2>
-        <input type="hidden" name="_subject" value="New tip from the website">
-        <input type="text" name="_gotcha" class="sr" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="row">
-          <label for="t-name">Your name (optional)<input type="text" id="t-name" name="name" autocomplete="name"></label>
-          <label for="t-contact">Email or phone (optional)<input type="text" id="t-contact" name="contact"></label>
-        </div>
-        <label for="t-rel">Your connection to the case
-          <select id="t-rel" name="connection">
-            <option>Family member</option><option>Witness</option><option>Journalist</option><option>Attorney</option><option>Community member</option><option>Prefer not to say</option>
-          </select>
-        </label>
-        <div class="row">
-          <label for="t-agency">Agency involved<input type="text" id="t-agency" name="agency" required placeholder="e.g. a city police department or county sheriff"></label>
-          <label for="t-where">City or county<input type="text" id="t-where" name="location"></label>
-        </div>
-        <label for="t-date">Date of the incident (if known)<input type="date" id="t-date" name="incident_date"></label>
-        <label for="t-what">What happened, and what records haven't been released?<textarea id="t-what" name="tip" required></textarea></label>
-        <label class="check" for="t-ack"><input type="checkbox" id="t-ack" name="acknowledged" value="yes" required>I understand the project is not a law firm and that sending a tip does not mean the project will take the case.</label>
-        <div><button class="btn primary" type="submit">Send tip</button></div>
-      </form>
-      {% endif %}
-    {% else %}
-      <p>The tip line isn't open yet. Please check back soon.</p>
-    {% endif %}
+      {% include tip-content.html %}
     </div>
   </section>

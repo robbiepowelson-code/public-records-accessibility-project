@@ -10,23 +10,45 @@ layout: default
       <h1>{{ h.hero_title }} <span>{{ h.hero_highlight }}</span></h1>
       <p class="lead">{{ h.hero_text }}</p>
       <div class="btns">
-        {% if tips_on %}<a class="btn primary" href="{{ '/tips/' | relative_url }}">Send us a tip</a>
+        {% if tips_on %}<a class="btn primary" href="#tips">Send us a tip</a>
         <a class="btn" href="#work">See what we do</a>{% else %}<a class="btn primary" href="#work">See what we do</a>
-        <a class="btn" href="{{ '/about/' | relative_url }}">Who we are</a>{% endif %}
+        <a class="btn" href="#about">Who we are</a>{% endif %}
       </div>
     </div>
   </section>
 
-  {% if press_on %}
-  <section id="latest">
+  {% if press_on or coverage_on %}
+  <section id="news">
     <div class="wrap stack">
-      <h2>Latest</h2>
+      <h2>News</h2>
+      {% if press_on %}
+      <h3>Press releases</h3>
       <ul class="list">
         {% assign recent = live_press | sort: "date" | reverse %}
         {% for r in recent limit: 3 %}
         <li><span class="label">{{ r.date | date: "%b %-d, %Y" }}</span><p><a href="{{ r.url | relative_url }}">{{ r.title }}</a></p></li>
         {% endfor %}
       </ul>
+      {% endif %}
+      {% if coverage_on %}
+      <h3>In the news</h3>
+      <div class="coverage-list">
+        {% for story in site.data.coverage.stories %}
+        {% if story.published == true and story.title != blank and story.outlet != blank and story.url != blank and story.image != blank and story.image_alt != blank %}
+        <article class="coverage-story">
+          <a class="coverage-image" href="{{ story.url | escape }}" aria-label="{{ story.title | escape }}">
+            <img src="{{ story.image | relative_url }}" alt="{{ story.image_alt | escape }}" loading="lazy" width="480" height="320">
+          </a>
+          <div class="stack">
+            <p class="label">{{ story.outlet | escape }}</p>
+            <h3 class="coverage-title"><a href="{{ story.url | escape }}">{{ story.title | escape }}</a></h3>
+            {% if story.image_credit and story.image_credit != "" %}<p class="muted photo-credit">Photo: {{ story.image_credit | escape }}</p>{% endif %}
+          </div>
+        </article>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
   </section>
   {% endif %}
@@ -43,11 +65,65 @@ layout: default
   </section>
 
   <section id="about">
-    <div class="wrap stack" style="gap:22px">
-      <div class="stack">
+    <div class="wrap stack">
         <h2>Who we are</h2>
         <p>{{ h.who_we_are }}</p>
+    </div>
+  </section>
+
+  <section id="authors">
+    <div class="wrap">
+      <h2>Authors</h2>
+      <div class="authors">
+        {% assign people = site.authors | sort: "order" %}
+        {% for a in people %}
+        {% assign parts = a.name | split: " " %}
+        <article class="author" id="{{ a.name | slugify }}">
+          {% if a.photo and a.photo != "" %}
+          <img class="photo" src="{{ a.photo | relative_url }}" alt="Photo of {{ a.name }}">
+          {% else %}
+          <div class="photo" aria-hidden="true">{{ parts.first | slice: 0 }}{% if parts.size > 1 %}{{ parts.last | slice: 0 }}{% endif %}</div>
+          {% endif %}
+          <div class="stack">
+            <h3 class="author-name">{{ a.name }}</h3>
+            {% if a.role %}<p class="label">{{ a.role }}</p>{% endif %}
+            <div class="bio">{{ a.content }}</div>
+            {% if a.links and a.links.size > 0 %}
+            <p class="links">{% for l in a.links %}<a href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+            {% endif %}
+          </div>
+        </article>
+        {% endfor %}
       </div>
-      <div><a class="btn" href="{{ '/authors/' | relative_url }}">Meet the authors</a></div>
+    </div>
+  </section>
+
+  <section id="ethics">
+    <div class="wrap stack">
+      <h2>Ethics</h2>
+      <p>We follow the <a href="https://www.spj.org/ethicscode.asp">Society of Professional Journalists’ Code of Ethics</a>, with one exception: we do not adopt its guidance to avoid political and other outside activities that may compromise impartiality or credibility.</p>
+      <p>Conventional ideas of neutrality can reflect dominant institutional values. Journalists whose lived experiences, backgrounds, or identities diverge from those values have too often been labeled “non-neutral,” delegitimized, or excluded. We evaluate journalism by its accuracy, transparency, and fairness—not by a journalist’s identity or outside activities. We make no apology for standing up for the communities we come from.</p>
+    </div>
+  </section>
+
+  <section id="get-involved">
+    <div class="wrap stack">
+      <h2>Get Involved</h2>
+      <h3>Get in touch</h3>
+      {% if site.data.settings.contact_email and site.data.settings.contact_email != "" %}
+      <p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={{ site.data.settings.contact_email | url_encode }}" target="_blank" rel="noopener noreferrer">{{ site.data.settings.contact_email | escape }}</a></p>
+      {% endif %}
+      {% assign pc = site.data.settings.press_contact %}
+      {% if pc.email and pc.email != "" %}
+      <p>Media inquiries: {% if pc.name and pc.name != "" %}{{ pc.name | escape }} · {% endif %}<a href="mailto:{{ pc.email | escape }}">{{ pc.email | escape }}</a>{% if pc.phone and pc.phone != "" %} · {{ pc.phone | escape }}{% endif %}</p>
+      {% endif %}
+      {% if donation_on %}<p><a class="btn primary" href="{{ site.data.settings.donation_url | escape }}">Make a financial contribution</a></p>{% endif %}
+      {% if tips_on %}
+      <div id="tips" class="stack">
+        <h3>Send a tip</h3>
+        <p>Know of a police killing or serious use of force in California where the records or video haven't come out? Tell us.</p>
+        {% include tip-content.html %}
+      </div>
+      {% endif %}
     </div>
   </section>

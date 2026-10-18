@@ -88,7 +88,7 @@ footer .wrap{display:grid;gap:8px}
 .author{display:grid;grid-template-columns:120px 1fr;gap:24px;padding-block:28px;border-bottom:1px solid var(--rule)}
 .author > *{min-width:0}
 .author .photo{width:120px;aspect-ratio:1;max-width:100%;object-fit:cover;background:var(--field);border:1px solid var(--rule);display:grid;place-items:center;font:500 1.6rem var(--mono);color:var(--muted)}
-#yesica-prado .photo{object-position:center top}
+#yesica-prado .photo{object-position:center 2%;border:0}
 .author .stack{gap:8px}
 .author .links{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.92rem}
 @media (max-width:560px){.author{grid-template-columns:1fr;gap:14px}.author .photo{width:96px}}
