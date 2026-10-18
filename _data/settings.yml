@@ -17,6 +17,6 @@ press_contact:
   phone: ""
 
 # General contact email shown in the footer (leave "" to hide).
-contact_email: ""
+contact_email: "info@gettherecords.org"
 
 donation_url: ""

@@ -55,7 +55,7 @@
       {% if coverage_on %}<a href="{{ '/about/in-the-news/' | relative_url }}">In the News</a>{% endif %}
       {% if donation_on %}<a href="{{ '/get-involved/contribute/' | relative_url }}">Financial Contributions</a>{% endif %}
     </nav>
-    <p><strong style="color:var(--fg)">{{ site.title }}</strong> · California{% if site.data.settings.contact_email and site.data.settings.contact_email != "" %} · <a href="mailto:{{ site.data.settings.contact_email }}">{{ site.data.settings.contact_email }}</a>{% endif %}</p>
+    <p><strong style="color:var(--fg)">{{ site.title }}</strong> · California{% if site.data.settings.contact_email and site.data.settings.contact_email != "" %} · <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={{ site.data.settings.contact_email | url_encode }}" target="_blank" rel="noopener noreferrer">{{ site.data.settings.contact_email }}</a>{% endif %}</p>
     <p>We are not a law firm and do not give legal advice. Lawsuits are filed by the founders as self-represented petitioners.</p>
   </div>
 </footer>

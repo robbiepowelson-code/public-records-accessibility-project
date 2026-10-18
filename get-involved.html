@@ -17,7 +17,7 @@ permalink: /get-involved/
   <div class="wrap stack">
     <h2>Contact the project</h2>
     {% if site.data.settings.contact_email and site.data.settings.contact_email != "" %}
-    <p><a href="mailto:{{ site.data.settings.contact_email | escape }}">{{ site.data.settings.contact_email | escape }}</a></p>
+    <p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={{ site.data.settings.contact_email | url_encode }}" target="_blank" rel="noopener noreferrer">{{ site.data.settings.contact_email | escape }}</a></p>
     {% else %}
     <p>General contact details have not yet been published.</p>
     {% endif %}

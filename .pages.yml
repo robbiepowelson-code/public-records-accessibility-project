@@ -119,9 +119,6 @@ content:
           - name: text
             label: Description
             type: text
-      - name: legal_basis
-        label: Legal basis line
-        type: text
       - name: who_we_are
         label: Who we are
         type: text
