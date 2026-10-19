@@ -1,5 +1,6 @@
 ---
 name: Robbie Powelson
+email: robbie@gettherecords.org
 role: Co-founder
 order: 2
 photo: /images/robbie-powelson.png

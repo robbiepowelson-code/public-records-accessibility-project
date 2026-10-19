@@ -24,15 +24,17 @@ p{margin:0}
 .label{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .muted{color:var(--muted)}
 .stack{display:grid;gap:14px}
-.work-stories{display:grid;grid-auto-flow:column;grid-auto-columns:min(82%,330px);gap:20px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 16px;overscroll-behavior-inline:contain}
+.work-wrap{max-width:1080px;gap:24px}
+.work-stories{display:grid;grid-auto-flow:column;grid-auto-columns:min(86%,500px);gap:20px;overflow-x:auto;scroll-snap-type:x proximity;padding:4px 4px 16px;overscroll-behavior-inline:contain}
 .work-story{min-width:0;scroll-snap-align:start;border:1px solid var(--rule);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
 .work-story-featured{border-top:4px solid var(--accent)}
 .work-story-link{display:block;text-decoration:none;flex:1}
 .work-story-link:hover h3{text-decoration:underline;text-decoration-color:var(--accent)}
 .work-story-link img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
-.work-story-link .stack{padding:16px;gap:10px}
-.work-story-link h3{font-size:1.1rem;line-height:1.35;overflow-wrap:anywhere}
-.work-story-credit{padding:0 16px 16px;font-size:.75rem}
+.work-story-link .stack{padding:20px;gap:14px}
+.work-story-link h3{font-size:1.4rem;line-height:1.25;font-weight:800;overflow-wrap:anywhere}
+.work-story-credit{padding:0 20px 20px;font-size:.75rem}
+.work-story-read{font-weight:600;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
 
 header{border-bottom:1px solid var(--rule)}
 header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:16px}
@@ -127,6 +129,8 @@ button.btn{font:800 .95rem var(--sans)}
 .small-h2{font-size:1.15rem}
 .small-h2::before{width:28px;height:4px;margin-bottom:10px}
 .author-name{font-size:1.35rem}
+.author-heading{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 16px;min-width:0}
+.author-email{font-size:.88rem;overflow-wrap:anywhere;min-width:0}
 
 /* press releases */
 .release-head .lead-sub{font-size:1.15rem;color:var(--muted);max-width:60ch}

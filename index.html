@@ -54,13 +54,8 @@ layout: default
   {% endif %}
 
   <section id="work">
-    <div class="wrap stack">
+    <div class="wrap stack work-wrap">
       <h2>What we do</h2>
-      <ul class="list">
-        {% for item in h.what_we_do %}
-        <li><span class="label">{{ item.label }}</span><p>{{ item.text }}</p></li>
-        {% endfor %}
-      </ul>
       {% assign work_stories = h.work_stories | sort: 'date' | reverse %}
       {% if work_stories.size > 0 %}
       <div class="work-stories" role="region" aria-label="Articles about public records work" tabindex="0">
@@ -70,10 +65,12 @@ layout: default
         {% for story in ordered_stories %}
         <article class="work-story{% if story.featured %} work-story-featured{% endif %}">
           <a class="work-story-link" href="{{ story.url | relative_url }}">
-            <img src="{{ story.image | relative_url }}" alt="{{ story.image_alt | escape }}" width="600" height="400" loading="lazy">
+            <img src="{{ story.image | relative_url }}" alt="{{ story.image_alt | escape }}" width="600" height="400">
             <div class="stack">
               <p class="label">{{ story.outlet | escape }} · <time datetime="{{ story.date | date: '%Y-%m-%d' }}">{{ story.date | date: '%b %-d, %Y' }}</time></p>
               <h3>{{ story.title | escape }}</h3>
+              {% if story.summary and story.summary != "" %}<p>{{ story.summary | escape }}</p>{% endif %}
+              <span class="work-story-read">Read article</span>
             </div>
           </a>
           <p class="work-story-credit muted">Photo: {{ story.image_credit | escape }}</p>
@@ -81,6 +78,11 @@ layout: default
         {% endfor %}
       </div>
       {% endif %}
+      <ul class="list">
+        {% for item in h.what_we_do %}
+        <li><span class="label">{{ item.label }}</span><p>{{ item.text }}</p></li>
+        {% endfor %}
+      </ul>
     </div>
   </section>
 
@@ -105,7 +107,10 @@ layout: default
           <div class="photo" aria-hidden="true">{{ parts.first | slice: 0 }}{% if parts.size > 1 %}{{ parts.last | slice: 0 }}{% endif %}</div>
           {% endif %}
           <div class="stack">
-            <h3 class="author-name">{{ a.name }}</h3>
+            <div class="author-heading">
+              <h3 class="author-name">{{ a.name }}</h3>
+              {% if a.email and a.email != "" %}<a class="author-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={{ a.email | url_encode }}" target="_blank" rel="noopener noreferrer">{{ a.email | escape }}</a>{% endif %}
+            </div>
             {% if a.role %}<p class="label">{{ a.role }}</p>{% endif %}
             <div class="bio">{{ a.content }}</div>
             {% if a.links and a.links.size > 0 %}

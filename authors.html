@@ -28,7 +28,10 @@ description: The people who request, litigate and report for the Public Records 
           <div class="photo" aria-hidden="true">{{ parts.first | slice: 0 }}{% if parts.size > 1 %}{{ parts.last | slice: 0 }}{% endif %}</div>
           {% endif %}
           <div class="stack">
-            <h2 class="author-name">{{ a.name }}</h2>
+            <div class="author-heading">
+              <h2 class="author-name">{{ a.name }}</h2>
+              {% if a.email and a.email != "" %}<a class="author-email" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={{ a.email | url_encode }}" target="_blank" rel="noopener noreferrer">{{ a.email | escape }}</a>{% endif %}
+            </div>
             {% if a.role %}<p class="label">{{ a.role }}</p>{% endif %}
             <div class="bio">{{ a.content }}</div>
             {% if a.links and a.links.size > 0 %}

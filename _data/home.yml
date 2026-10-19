@@ -6,21 +6,23 @@ hero_highlight: We sue to get them out.
 hero_text: Across California, government agencies too often disregard the California Public Records Act, delaying or withholding records the law makes public. When violations rarely lead to court, there is little pressure to comply. We bring cases to enforce the law and publish the records we obtain.
 
 work_stories:
-  - title: "Are Oakland vendors being harassed by cops?"
-    date: "2026-07-17"
-    outlet: The Oaklandside
-    url: https://oaklandside.org/2026/07/17/oakland-vendor-raid-lawsuit-2026/
-    image: https://oaklandside.org/wp-content/uploads/2021/04/Lake_Merritt_Vending_Program_20210403_1752-1200x800.jpg
-    image_alt: A vendor talks with a customer beside Lake Merritt.
-    image_credit: Amir Aziz/The Oaklandside
+  - title: "Oakland advocates' lawsuit targets city's crackdown on street vendors"
+    summary: KTVU reports on Robbie Powelson's lawsuit seeking public records about Oakland's street-vendor operations and alleged destruction of vendors' property.
+    date: "2026-07-15"
+    outlet: KTVU FOX 2
+    url: https://www.ktvu.com/news/oakland-street-vendors-lawsuit
+    image: https://images.foxtv.com/static.ktvu.com/www.ktvu.com/content/uploads/2026/07/1200/630/5f5f4a48-2.jpg?ve=1&tl=1
+    image_alt: KTVU coverage of Oakland's street-vendor lawsuit.
+    image_credit: KTVU FOX 2
     featured: false
-  - title: "Oakland police illegally keep information from those who request it, says attorney"
-    date: "2026-04-21"
+  - title: "OPD sued for withholding information about fatal police shooting"
+    summary: The Oaklandside reports on Robbie Powelson's lawsuit seeking records about a fatal July 13 police shooting in Fruitvale. OPD says the records are exempt because its investigation is ongoing.
+    date: "2026-08-04"
     outlet: The Oaklandside
-    url: https://oaklandside.org/2026/04/21/oakland-police-department-violating-california-public-records-act/
-    image: https://oaklandside.org/wp-content/uploads/2026/04/large-20260324_ChiefJamesBeere_EG_024-780x520.jpg
-    image_alt: The Oakland Police Administration Building.
-    image_credit: Estefany Gonzalez for The Oaklandside
+    url: https://oaklandside.org/2026/08/04/homeless-shooting-fruitvale-oakland-police-records-lawsuit/
+    image: https://oaklandside.org/wp-content/uploads/2023/12/opd-1024x649.jpeg
+    image_alt: Oakland Police Department.
+    image_credit: Pete Rosos for The Oaklandside
     featured: false
 
 what_we_do:
