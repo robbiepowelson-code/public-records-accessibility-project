@@ -5,6 +5,24 @@ hero_title: Public records should be public.
 hero_highlight: We sue to get them out.
 hero_text: Across California, government agencies too often disregard the California Public Records Act, delaying or withholding records the law makes public. When violations rarely lead to court, there is little pressure to comply. We bring cases to enforce the law and publish the records we obtain.
 
+work_stories:
+  - title: "Are Oakland vendors being harassed by cops?"
+    date: "2026-07-17"
+    outlet: The Oaklandside
+    url: https://oaklandside.org/2026/07/17/oakland-vendor-raid-lawsuit-2026/
+    image: https://oaklandside.org/wp-content/uploads/2021/04/Lake_Merritt_Vending_Program_20210403_1752-1200x800.jpg
+    image_alt: A vendor talks with a customer beside Lake Merritt.
+    image_credit: Amir Aziz/The Oaklandside
+    featured: false
+  - title: "Oakland police illegally keep information from those who request it, says attorney"
+    date: "2026-04-21"
+    outlet: The Oaklandside
+    url: https://oaklandside.org/2026/04/21/oakland-police-department-violating-california-public-records-act/
+    image: https://oaklandside.org/wp-content/uploads/2026/04/large-20260324_ChiefJamesBeere_EG_024-780x520.jpg
+    image_alt: The Oakland Police Administration Building.
+    image_credit: Estefany Gonzalez for The Oaklandside
+    featured: false
+
 what_we_do:
   - label: Request
     text: We file California Public Records Act requests for shooting and use-of-force records, body camera video and 911 audio.

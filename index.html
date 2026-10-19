@@ -61,6 +61,26 @@ layout: default
         <li><span class="label">{{ item.label }}</span><p>{{ item.text }}</p></li>
         {% endfor %}
       </ul>
+      {% assign work_stories = h.work_stories | sort: 'date' | reverse %}
+      {% if work_stories.size > 0 %}
+      <div class="work-stories" role="region" aria-label="Articles about public records work" tabindex="0">
+        {% assign featured_stories = work_stories | where: 'featured', true %}
+        {% assign other_stories = work_stories | where_exp: 'story', 'story.featured != true' %}
+        {% assign ordered_stories = featured_stories | concat: other_stories %}
+        {% for story in ordered_stories %}
+        <article class="work-story{% if story.featured %} work-story-featured{% endif %}">
+          <a class="work-story-link" href="{{ story.url | relative_url }}">
+            <img src="{{ story.image | relative_url }}" alt="{{ story.image_alt | escape }}" width="600" height="400" loading="lazy">
+            <div class="stack">
+              <p class="label">{{ story.outlet | escape }} · <time datetime="{{ story.date | date: '%Y-%m-%d' }}">{{ story.date | date: '%b %-d, %Y' }}</time></p>
+              <h3>{{ story.title | escape }}</h3>
+            </div>
+          </a>
+          <p class="work-story-credit muted">Photo: {{ story.image_credit | escape }}</p>
+        </article>
+        {% endfor %}
+      </div>
+      {% endif %}
     </div>
   </section>
 
