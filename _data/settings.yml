@@ -12,9 +12,9 @@ tip_line:
 
 # Media contact printed on every press release.
 press_contact:
-  name: ""
-  email: ""
-  phone: ""
+  name: "Robbie Powelson"
+  email: "info@gettherecords.org"
+  phone: "415-847-7500"
 
 # General contact email shown in the footer (leave "" to hide).
 contact_email: "info@gettherecords.org"
