@@ -6,7 +6,6 @@ layout: default
 {%- assign h = site.data.home -%}
   <section class="hero">
     <div class="wrap stack">
-      <p class="label">{{ h.hero_label }}</p>
       <h1>{{ h.hero_title }} <span>{{ h.hero_highlight }}</span></h1>
       <p class="lead">{{ h.hero_text }}</p>
       <div class="btns">
@@ -134,6 +133,7 @@ layout: default
   <section id="get-involved">
     <div class="wrap stack">
       <h2>Get Involved</h2>
+      <p class="notice">We are not a law firm. Neither Yesica Prado nor Robbie Powelson is a lawyer. We do not provide legal advice or legal representation.</p>
       <h3>Get in touch</h3>
       {% if site.data.settings.contact_email and site.data.settings.contact_email != "" %}
       <p><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={{ site.data.settings.contact_email | url_encode }}" target="_blank" rel="noopener noreferrer">{{ site.data.settings.contact_email | escape }}</a></p>

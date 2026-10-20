@@ -99,9 +99,6 @@ content:
     path: _data/home.yml
     format: yaml
     fields:
-      - name: hero_label
-        label: Small line above the headline
-        type: string
       - name: hero_title
         label: Headline
         type: string

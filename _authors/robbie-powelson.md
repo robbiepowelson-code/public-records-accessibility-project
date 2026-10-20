@@ -6,4 +6,4 @@ order: 2
 photo: /images/robbie-powelson.png
 links: []
 ---
-Robbie is a law student and advocate. He leads the project's public records requests and its self-represented court filings.
+Robbie is a public transparency advocate who has spent many years filing California Public Records Act requests and litigating to obtain public records.
