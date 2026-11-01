@@ -25,12 +25,12 @@ work_stories:
     featured: false
   - title: "UC Berkeley sued for allegedly failing to disclose existence of Law Students for Justice in Palestine records"
     summary: The Daily Californian reports on Robbie Powelson's California Public Records Act lawsuit against UC Berkeley, which seeks records on Berkeley Law's new student-organization rules restricting Law Students for Justice in Palestine and alleges the university never said whether the records exist.
-    date: "2026-10-21"
+    date: "2026-10-23"
     outlet: The Daily Californian
     url: https://www.dailycal.org/news/campus/uc-berkeley-sued-for-allegedly-failing-to-disclose-existence-of-law-students-for-justice-in/article_f1428b60-5e51-4bf3-bb13-5af58a721121.html
-    image: ""
-    image_alt: ""
-    image_credit: ""
+    image: https://bloximages.chicago2.vip.townnews.com/dailycal.org/content/tncms/assets/v3/editorial/3/92/3926edc3-d56e-4e26-a880-5151ee544380/6adace9177fa7.image.jpg?resize=1200%2C774
+    image_alt: Berkeley Law building, from The Daily Californian's coverage of the lawsuit.
+    image_credit: Noah Mendieta / The Daily Californian
     featured: false
 
 what_we_do:
