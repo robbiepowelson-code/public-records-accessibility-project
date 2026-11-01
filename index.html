@@ -64,7 +64,7 @@ layout: default
         {% for story in ordered_stories %}
         <article class="work-story{% if story.featured %} work-story-featured{% endif %}">
           <a class="work-story-link" href="{{ story.url | relative_url }}">
-            <img src="{{ story.image | relative_url }}" alt="{{ story.image_alt | escape }}" width="600" height="400">
+            {% if story.image and story.image != "" %}<img src="{{ story.image | relative_url }}" alt="{{ story.image_alt | escape }}" width="600" height="400">{% endif %}
             <div class="stack">
               <p class="label">{{ story.outlet | escape }} · <time datetime="{{ story.date | date: '%Y-%m-%d' }}">{{ story.date | date: '%b %-d, %Y' }}</time></p>
               <h3>{{ story.title | escape }}</h3>
@@ -72,7 +72,7 @@ layout: default
               <span class="work-story-read">Read article</span>
             </div>
           </a>
-          <p class="work-story-credit muted">Photo: {{ story.image_credit | escape }}</p>
+          {% if story.image_credit and story.image_credit != "" %}<p class="work-story-credit muted">Photo: {{ story.image_credit | escape }}</p>{% endif %}
         </article>
         {% endfor %}
       </div>
